@@ -1,0 +1,37 @@
+.service_menu_all_fixed{
+    position: fixed !important;
+    top: 13rem;
+    z-index: 21;
+    width: 100%;
+    padding-top: 10px !important;
+}
+
+.service_sub_menu_all_fixed{
+    position: fixed !important;
+    top: 15.5rem;
+    z-index: 22;
+    width: 100%;
+    padding-top: 10px !important;
+}
+
+.sct_heading_fixed{
+    background: transparent;
+}
+
+.service_col_three_main {
+    margin-top: -100px !important;
+    transition: .8s ease;
+}
+.service_col_three_main_fix {
+    margin-top: 10rem !important;
+    transition: .8s ease;
+}
+
+.service_col_three_main_fix_2 {
+    margin-top: -5rem !important;
+    transition: .8s ease;
+}
+
+.service_col_two .sct_content {
+    padding-top: 17rem !important;
+}

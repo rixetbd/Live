@@ -1,0 +1,29 @@
+@media (min-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}
+
+
+@media (max-width: 576px) {
+    section.hero_area .top_div h3{font-size: 3.5rem;}
+    section.hero_area .top_div h5{font-size: 1.2rem;}
+    section.hero_area .submenu{display: none;}
+
+    .py_10{padding:2rem 0;}
+
+
+    /* Slogan Box */
+    .slogan_box h3,.slogan_box h5{font-weight: 400;letter-spacing: 1px;}
+    .slogan_box h3{font-size: 2rem;}
+    .slogan_box h5{font-size: 1rem;}
+    h3.style_text_2{font-size: 2rem;}
+}
