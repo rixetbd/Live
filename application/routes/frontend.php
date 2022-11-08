@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\Frontend\HomePageController;
 use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\IPController;
 use App\Models\Country;
@@ -18,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('auth')->group(function(){
-
 
     Route::controller(FrontendController::class)->group(function(){
 
@@ -116,5 +116,16 @@ Route::middleware('auth')->group(function(){
 
     Route::post('/service-searchon-pricing', [ContactController::class, 'service_searchon_pricing']);
     Route::get('/index001nov', [ContactController::class, 'pricing_index']);
+
+
+
+    Route::controller(HomePageController::class)->group(function(){
+
+        Route::get('/home-nov', 'index')->name('front.index');
+        Route::get('/pricing-page', 'pricing_page')->name('front.pricing_page');
+
+    });
+
+
 
 });

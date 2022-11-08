@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap');
+
+/* 
+
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
+
+
+*/
+
+:root {
+    --primary-color: #486c8b;
+    --secondary-color: #5A80A0;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+.main_section {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.right_part {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+}
+
+.main_section .left_part {
+    position: fixed;
+    min-width: 250px;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_section .left_part .logo {
+    padding: 40px 0;
+}
+
+.main_section .left_part .logo a {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.nav_aria ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.nav_aria ul li {
+    margin: 15px;
+}
+
+.nav_aria ul li a {
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    letter-spacing: 1px;
+}
+
+.nav_aria ul li a:hover {
+    color: #5A80A0;
+}
+
+.social_links {
+    position: absolute;
+    bottom: 5px;
+    text-align: center;
+}
+
+.social_links a {
+    color: #fff;
+    margin: 10px;
+}

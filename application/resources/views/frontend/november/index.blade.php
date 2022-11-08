@@ -1,4 +1,4 @@
-@extends('frontend.final.master2')
+@extends('frontend.november.masterNov')
 
 @section('meta_tag')
 @include('meta::manager',[
@@ -10,6 +10,7 @@ or product.',
 'image' => asset('uploads/banners/lead_generation.png'),
 ])
 @endsection
+
 
 @section('custom_css')
 <link href="http://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro" rel="stylesheet">
@@ -26,8 +27,7 @@ or product.',
     .table tr td {
         font-size: 15px;
         line-height: 25px;
-        padding: 20px 20px;
-        /* box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff; */
+        padding: 15px;
     }
 
     .table tr {
@@ -58,28 +58,13 @@ or product.',
     }
 
 </style>
-
-@endsection
-
-@section('submenu')
-<section class="d-none" id="section_pagination">
-    <div class="container">
-        <ul class="padding_l1">
-            <li><a href="#">One</a></li>
-            <li><a href="#">Two</a></li>
-            <li><a href="#">Three</a></li>
-            <li><a href="#">Four</a></li>
-            <li><a href="#footer">Contact</a></li>
-        </ul>
-    </div>
-</section>
 @endsection
 
 @section('content')
 <!-- Home Header || Start -->
 <section class="hero_area">
     <div class="container-fluid p-0" style="position: fixed;">
-        <div class="top_div" style="background-color:#5A80A0">
+        <div class="top_div">
             <div class="container">
                 <h3>EMPLOYE SHORTAGE ?</h3>
                 <h5>Think outside the corporate boundary.</h5>
@@ -87,30 +72,19 @@ or product.',
                         now</a></p>
             </div>
         </div>
-        <div class="container-fluid submenu d-none" id="">
-            <div class="container">
-                {{-- <ul class="mb-0" style="list-style: none;">
-                    <li><a href="#">One</a></li>
-                    <li><a href="#">Two</a></li>
-                    <li><a href="#">Three</a></li>
-                    <li><a href="#">Four</a></li>
-                    <li><a href="#footer">Contact</a></li>
-                </ul> --}}
-            </div>
-        </div>
     </div>
 </section>
 <!-- Home Header || End -->
 
 
-
 <!-- Home Scetion - Section Three || Start -->
-<section class="section_part" style="padding-bottom: 10rem;">
-    <div id="text2" class="container-fluid second_part">
+<section class="section_part">
+    <div id="text2" class="container-fluid second_part" style="padding-bottom: 10rem;">
         <div class="container-fluid focus_content">
             <div class="container content_text p-0">
                 <div class="text_area pb-5">
-                    <h1 class="py-5 mb-2" style="background: #c1ccdb;">DiMarz | Welcome To The Next-Gen BPO Services
+                    <h1 class="py-5 mb-2 text-center" style="background: #c1ccdb;">DiMarz | Welcome To The Next-Gen BPO
+                        Services
                     </h1>
                     <div class="px-5 py-3">
                         <p>DiMarz provides next-gen BPO & Digital Services that help entrepreneurs and industries to
@@ -215,7 +189,6 @@ or product.',
                         <div class="home_service_box">
                             <div class="img_box">
                                 <img src="{{asset('final_front_assets/img/icons/set_2/Untitled-2-01.png')}}" alt="">
-                                {{-- <h4>Software Industry</h4> --}}
                             </div>
                             <div class="content_box">
                                 <h4>Software Industry</h4>
@@ -374,16 +347,8 @@ or product.',
 </section>
 <!-- Home Scetion - Section Three || End -->
 
-<section class="container-fluid slogan_box slogan_dark py-5 section_part" style="z-index: 20;padding-top:10rem;">
-    <div class="container">
-        <h3>Our front office function as your back office</h3>
-        <h5>The collective experience of our 5 year-old BPO company</h5>
-    </div>
-</section>
-
-
 <!-- Home Scetion - Section Four || Start -->
-<section class="section_part" style="" id="pricing">
+<section class="section_part" id="pricing">
     <div class="container-fluid col-sm-12 col-md-12 pb-2"
         style="background-color: #C1CCDB;padding-top: 4rem!important;">
         <div class="container pt-5 pb-4">
@@ -394,68 +359,29 @@ or product.',
 
 <section class="section_part" id="sub_serve" style="z-index:;">
     <div class="container-fluid d-flex" style="background-color: #C1CCDB;">
-
-
-
         <div class="container service_style_20 service_grp_hover">
-
-
             <div class="d-flex" id="service_grp_names">
                 @forelse ($faq_service_name as $key=> $service_name)
-                <div class="service_grp_names me-2" onmouseover="service_grp_names(`{{$service_name->id}}`)"
-                    {{-- onmouseout="service_grp_names_out(`grp_one_menu{{$key}}`)" --}}>{{$service_name->name}}</div>
+                <div class="service_grp_names me-2" onmouseover="service_grp_names(`{{$service_name->id}}`)">
+                    {{$service_name->name}}</div>
                 @empty
                 <div class="grp_one" onclick="ServiceNameClick()">No Service Availeble Now</div>
                 @endforelse
 
-                {{-- @for ($i = 0; $i < count($faq_service_name); $i++) --}}
                 <div class="col-sm-12 col-md-12 p-4" id="service_grp_hover_part">
                     <h4 style="font-size:20px;">Choose Your Service</h4>
                     <hr style="margin: 0 0 10px 0;">
                     <div class="row" id="service_grp_names_list">
-                        {{-- <div class="col-sm-12 col-md-6">
-                            <div class="grp_one grp_one{{$service->id}}"
-                        onclick="ServiceNameClick('{{$service->id}}', 'grp_one{{$service->id}}')">{{$service->name}}
                     </div>
-                </div> --}}
+                </div>
             </div>
         </div>
-        {{-- @endfor --}}
-    </div>
-
-
-    {{-- <ul class="mb-0" style="background-color: #C1CCDB;" id="service_hover_action">
-                @forelse ($faq_service_name as $service_name)
-                    <li class="grp_one" id="grp_one{{$service_name->id}}"
-    onclick="ServiceNameClick()">{{$service_name->name}}</li>
-    @empty
-    <li class="grp_one" onclick="ServiceNameClick()">No Service Availeble Now</li>
-    @endforelse
-    </ul> --}}
-
-    {{-- <div class="col-sm-12 col-md-12 p-4" id="service_grp_hover_part">
-                <h4 style="font-size:20px;">Choose Your Service</h4>
-                <hr style="margin: 0 0 10px 0;">
-                <div class="row">
-                    @forelse ($service_list as $service)
-                    <div class="col-sm-12 col-md-6">
-                        <div class="grp_one grp_one{{$service->id}}"
-    onclick="ServiceNameClick('{{$service->id}}', 'grp_one{{$service->id}}')">{{$service->name}}
-    </div>
-    </div>
-    @empty
-    <li class="grp_one">No Service</li>
-    @endforelse
-    </div>
-    </div> --}}
-
-    </div>
     </div>
 
 </section>
 
 
-<section class="section_part" id="">
+<section class="section_part" id="" style="background:#D8DBE1;">
     <div class="container" id="service_col_main">
         <div class="row m-0">
             <div class="col-sm-12 col-md-12 sct_heading" id="sct_heading"
@@ -489,7 +415,7 @@ or product.',
             </div>
 
             <div class="row m-0 w-100">
-                <div class="col-sm-12 col-md-8" id="service_col_two"> {{-- style="background: green;" --}}
+                <div class="col-sm-12 col-md-8" id="service_col_two">
                     <div class="list_item_info">
                         <div class="sct_content">
                             <h3 class="pt-2">Overview</h3>
@@ -509,12 +435,10 @@ or product.',
                     style="margin-top: -180px !important;z-index:22;">
                     <div class="service_col_three_main ps-3">
                         <div class="row m-0 pt-3" id="card_info">
-                            {{-- <div style="border:1px solid #fff;padding:15px;margin-top:-65px;"> --}}
                             <div id="img_replace">
                                 <img src="{{asset('final_front_assets/img/portfolio/branding-1.jpg')}}" alt="slider1"
                                     class="img-fluid">
                             </div>
-                            {{-- </div> --}}
                             <div class="my-3" style="box-shadow: 3px 3px 6px #a2a3ab, -3px -3px 6px #ffffff;">
                                 <div class="text-center mt-3 py-2"
                                     style="border: 1px solid #B6FAC5;border-radius: 10px;">
@@ -556,7 +480,6 @@ or product.',
                                 <div class="row m-0 p-0 contact_group">
                                     <div class="col-6 ps-0">
                                         <a class="btn w-100" id="confirm_order_btn" href="">Confirm Order</a>
-                                        {{-- {{route('order.index',['id'=>$service->id,'feature_index'=>'0'])}} --}}
                                     </div>
                                     <div class="col-6 pe-0">
                                         <button class="btn w-100">Custom Order</button>
@@ -570,244 +493,9 @@ or product.',
         </div>
 </section>
 
-<!-- <section class="section_part" id="pricing">
-    <div class="container" id="service_col_main">
-        <div class="row justify-content-center">
-            <div class="" id="service_col_full">
-                <div class="p-0 m-0">
-                    {{-- <h3 class="h_text_1">Services & Pricing</h3> --}}
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-3 p-2" id="service_col_one">
-                <div class="service_col_one_1">
-                    <input type="text" name="" class="form-control border_radius_none"
-                        placeholder="Search Your Services">
-                </div>
-                <div class="service_col_one_2">
-                    <ul class="service_all_list" id="menu">
-                        @forelse ($service_list as $service)
-                        <li class="grp_one grp_one{{$service->id}}"
-                            onclick="ServiceNameClick('{{$service->id}}', 'grp_one{{$service->id}}')">{{$service->name}}
-                        </li>
-                        @empty
-                        <li class="grp_one">No Service</li>
-                        @endforelse
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6" id="service_col_two">
-                <div class="list_item_info">
-                    <div class="sct_heading" id="sct_heading">
-                        @if (count($service_list) != 0)
-                        <h3 id="service_list_title">Service List Title</h3>
-                        <h6 id="service_list_category">Service List Category</h6>
-                        @else
-                        <h3 id="service_list_title">Service Title</h3>
-                        <h6 id="service_list_category">Service Category</h6>
-                        @endif
-                    </div>
-                    <div class="sct_content">
-                        <div class="slider" id="slider_add">
-                            <div class="slide_viewer">
-                                <div class="slide_group" id="service_banner_slider">
-                                    <div class="slide">
-                                        <img src="http://127.0.0.1:8000/final_front_assets/img/portfolio/branding-1.jpg"
-                                            alt="slider1" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="slide_buttons"> </div>
-
-                        <div class="directional_nav">
-                            <div class="previous_btn" title="Previous">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px"
-                                    height="40px" viewBox="-11 -11.5 65 66">
-                                    <g>
-                                        <g>
-                                            <path fill="#474544"
-                                                d="M-10.5,22.118C-10.5,4.132,4.133-10.5,22.118-10.5S54.736,4.132,54.736,22.118
-                                        c0,17.985-14.633,32.618-32.618,32.618S-10.5,40.103-10.5,22.118z M-8.288,22.118c0,16.766,13.639,30.406,30.406,30.406 c16.765,0,30.405-13.641,30.405-30.406c0-16.766-13.641-30.406-30.405-30.406C5.35-8.288-8.288,5.352-8.288,22.118z" />
-                                            <path fill="#474544"
-                                                d="M25.43,33.243L14.628,22.429c-0.433-0.432-0.433-1.132,0-1.564L25.43,10.051c0.432-0.432,1.132-0.432,1.563,0	c0.431,0.431,0.431,1.132,0,1.564L16.972,21.647l10.021,10.035c0.432,0.433,0.432,1.134,0,1.564	c-0.215,0.218-0.498,0.323-0.78,0.323C25.929,33.569,25.646,33.464,25.43,33.243z" />
-                                        </g>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="next_btn" title="Next">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px"
-                                    height="40px" viewBox="-11 -11.5 65 66">
-                                    <g>
-                                        <g>
-                                            <path fill="#474544"
-                                                d="M22.118,54.736C4.132,54.736-10.5,40.103-10.5,22.118C-10.5,4.132,4.132-10.5,22.118-10.5	c17.985,0,32.618,14.632,32.618,32.618C54.736,40.103,40.103,54.736,22.118,54.736z M22.118-8.288	c-16.765,0-30.406,13.64-30.406,30.406c0,16.766,13.641,30.406,30.406,30.406c16.768,0,30.406-13.641,30.406-30.406 C52.524,5.352,38.885-8.288,22.118-8.288z" />
-                                            <path fill="#474544"
-                                                d="M18.022,33.569c 0.282,0-0.566-0.105-0.781-0.323c-0.432-0.431-0.432-1.132,0-1.564l10.022-10.035 			L17.241,11.615c 0.431-0.432-0.431-1.133,0-1.564c0.432-0.432,1.132-0.432,1.564,0l10.803,10.814c0.433,0.432,0.433,1.132,0,1.564 L18.805,33.243C18.59,33.464,18.306,33.569,18.022,33.569z" />
-                                        </g>
-                                    </g>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <div id="service_list_description" class="mt-4" style="margin-bottom:20rem;">
-                            @if (count($service_list) != 0)
-                            {!! $service_list[0]->description !!}
-                            @else
-                            Description Will be add here.
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-3" id="service_col_three">
-                <div class="service_col_three_main ps-3">
-
-                    <div class="row m-0" id="card_info">
-                        <div class="my-3" style="box-shadow: 3px 3px 6px #a2a3ab, -3px -3px 6px #ffffff;">
-                            <div class="text-center mt-3 py-2" style="border: 1px solid #B6FAC5;border-radius: 10px;">
-                                <h4 class="text-uppercase">Packages</h4>
-                            </div>
-                            <div class="row m-0 my-3" id="card_badge">
-                                <div class="col">
-                                    Silver
-                                </div>
-                                <div class="col">
-                                    Gold
-                                </div>
-                                <div class="col">
-                                    Diamond
-                                </div>
-                            </div>
-                            <div class="row m-0 mt-5 p-0 justify-content-between"
-                                style="box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff;">
-                                <div class="col-4 btn_right_shadow" id="ser_pack_price">US $ 50</div>
-                                <div class="col-7 card_info_heading" id="ser_pack_title">Packege Title Here</div>
-                            </div>
-
-                            <div class="col-12 mt-4" id="ser_pack_description"
-                                style="box-shadow: none;padding:10px;border: 1px solid #fff;margin-bottom: 15px;">
-                                LinkedIn, Facebook, Google Web Scraping, Email Collection, Formatting Included</div>
-
-                        </div>
-
-                        <div class="col-12"
-                            style="padding: 25px 10px;margin: 2px 0 0 0;box-shadow:  3px 3px 6px #a2a3ab, -3px -3px 6px #ffffff;padding:10px;">
-                            <div class="col-12 mb-3 py-2" style="text-align: center;border: 1px solid #fff;">
-                                <span id="ser_pack_duration">3</span> Days Delivery
-                            </div>
-                            <div class="col-12 mb-2"
-                                style="box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff;padding:10px;">
-                                <ul style="list-style: none;margin:0;padding:0;" id="ser_pack_active">
-                                    <li><i class="fas fa-check"></i> 50 email sends</li>
-                                </ul>
-                            </div>
-                            <div class="row m-0 p-0 contact_group">
-                                <div class="col-6 ps-0">
-                                    <button class="btn w-100">Contact US</button>
-                                </div>
-                                <div class="col-6 pe-0">
-                                    <button class="btn w-100">Custom</button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-</section> -->
-<!-- Home Scetion - Section Four || End -->
-
-
-<!-- Home Scetion - Section Five || Start -->
-{{-- <section class="section_part">
-    <div class="container" style="position: relative;z-index: 20;background-color:var(--bg-default)">
-        <div class="row align-items-end justify-content-between">
-            <div class="col-6 second_service" style="position: relative;z-index: 20;">
-                <div class="IMG_01_1" style="left: 10px;bottom: 100px;height: 180px;">
-                    <img class="img-fluid" src="{{asset('final_front_assets/img/icons/1.png')}}" alt="">
-</div>
-<div class="IMG_01_1" style="left: 235px;bottom: 100px;height: 180px;">
-    <img class="img-fluid" src="{{asset('final_front_assets/img/icons/2.png')}}" alt="">
-</div>
-<div class="IMG_01_1" style="left: 460px;bottom: 100px;height: 180px;">
-    <img class="img-fluid" src="{{asset('final_front_assets/img/icons/3.png')}}" alt="">
-</div>
-<div class="IMG_01_1" style="left: 680px;bottom: 0;height: 280px;">
-    <img class="img-fluid" src="{{asset('final_front_assets/img/icons/4.png')}}" alt="">
-</div>
-<div class="IMG_01_1" style="left: 905px;bottom: 0;height: 280px;">
-    <img class="img-fluid" src="{{asset('final_front_assets/img/icons/5.png')}}" alt="">
-</div>
-<div class="IMG_01_1" style="left: 1115px;bottom: 0;height: 280px;">
-    <img class="img-fluid" src="{{asset('final_front_assets/img/icons/6.png')}}" alt="">
-</div>
-<div class="IMG_01">
-    <div class="mid_div">
-    </div>
-</div>
-</div>
-<div class="col-12" style="z-index: 25;margin-top: -100px;">
-    <h6 class="" style="margin-top: -50px;margin-bottom: 0;width:50%;
-                color: #fff;
-                font-size: 30px;
-                background: #b6fac5;text-shadow: -3px 3px 10px rgb(113 113 113);
-                padding: 5px 15px;text-transform:uppercase;">Know your <br>standard working procedure.</h6>
-</div>
-</div>
-</div>
-</section> --}}
-
-{{-- <section class="section_part">
-    <div class="container" style="position: relative;z-index: 20;background-color:var(--bg-default);padding-top:110px;">
-        <div class="row service_icons_grp">
-            <div class="col-sm-6 col-md-2">
-                <div class="small_div">
-                    <img class="img-fluid" src="{{asset('final_front_assets/img/icons/1.png')}}" alt="">
-</div>
-</div>
-<div class="col-sm-6 col-md-2">
-    <div class="small_div">
-        <img class="img-fluid" src="{{asset('final_front_assets/img/icons/2.png')}}" alt="">
-    </div>
-</div>
-<div class="col-sm-6 col-md-2">
-    <div class="small_div">
-        <img class="img-fluid" src="{{asset('final_front_assets/img/icons/3.png')}}" alt="">
-    </div>
-</div>
-<div class="col-sm-6 col-md-2">
-    <div class="mid_div">
-        <img class="img-fluid" src="{{asset('final_front_assets/img/icons/4.png')}}" alt="">
-    </div>
-</div>
-
-<div class="col-sm-6 col-md-2">
-    <div class="mid_div">
-        <img class="img-fluid" src="{{asset('final_front_assets/img/icons/5.png')}}" alt="">
-    </div>
-</div>
-
-<div class="col-sm-6 col-md-2">
-    <div class="mid_div">
-        <img class="img-fluid" src="{{asset('final_front_assets/img/icons/6.png')}}" alt="">
-    </div>
-</div>
-
-<div class="col-sm-12 col-md-6">
-    <h6>Know our <br>standard working procedure.</h6>
-</div>
-</div>
-</div>
-</section> --}}
-<!-- Home Scetion - Section Five || End -->
-
-<section class="section_part" style="padding-bottom:10rem;z-index: 22;" id="compare_packages">
+<section class="section_part" style="padding-bottom:10rem;z-index: 22;background:#D8DBE1;" id="compare_packages">
     <div class="container">
-        {{-- <h3 class="mb-4 pt-5" style="font-size:30px;">Compare Packages</h3> --}}
         <table class="table table-bordered table-hover" style="border-color: #fff;">
             <tr style="background-color: #C1CCDB;color: #000;">
                 <td class="text-left" style="width: 31%;font-size:30px;font-wieght:800;">Compare Packages</td>
@@ -894,7 +582,7 @@ or product.',
 </section>
 
 
-<section class="container-fluid slogan_box slogan_dark py-5 section_part" style="z-index: 26;">
+<section class="container-fluid slogan_box slogan_dark py-5 section_part" style="z-index: 26;background:#383838;">
     <div class="container mt-3">
         <h3>We like to descrive what are doing as a process</h3>
         <h5>What get measured, gets managed</h5>
@@ -912,16 +600,6 @@ or product.',
 <!-- Home Scetion - Section Six || Start -->
 <section class="section_part" style="background:#D8DBE1;padding-bottom:20rem;z-index: 26;">
     <div class="container section_part" style="padding-bottom:6rem">
-        <!-- <div class="row align-items-center" style="padding-bottom: 80px;">
-            {{-- <div class="col-sm-12 col-md-12 text-center">
-                <h3>Our Working Process</h3>
-                <h5><i class="fas fa-angle-down"></i></h5>
-                <h5><i class="fas fa-arrow-down"></i></h5>
-            </div>
-            <div class="col-sm-12 col-md-5">
-                <img src="{{asset('final_front_assets/work-process.gif')}}" alt="" style="width: 100%;margin-top:
-            100px;"> --}}
-        </div> -->
         <div class="col-sm-12 col-md-12">
             <div class="spinx-connect m-0">
                 <h3 data-index="0" class="spinx-acco-title current"><i class='bx bx-user'></i>Connect</h3>
@@ -933,28 +611,24 @@ or product.',
                 </div>
                 <h3 data-index="1" class="spinx-acco-title"><i class='bx bx-user'></i>Agreement</h3>
                 <div class="spinx-acco-content" style="display: none;">
-                    {{-- <h4>INTELLIGENCE &amp; EXPERIENCE</h4> --}}
                     <p>We love to discuss about the project in details before making up an agreement. After a successful
                         discussion we go for an agreement with you.</p>
 
                 </div>
                 <h3 data-index="2" class="spinx-acco-title"><i class='bx bx-user'></i>Final Strategy</h3>
                 <div class="spinx-acco-content" style="display: none;">
-                    {{-- <h4>THE PAST &amp; THE FUTURE</h4> --}}
                     <p>The initial step after getting the project is research & planning to make a final strategy. Our
                         experts analyze your project to find the most appropriate method for the project.</p>
 
                 </div>
                 <h3 data-index="3" class="spinx-acco-title"><i class='bx bx-user'></i>Implementation</h3>
                 <div class="spinx-acco-content" style="display: none;">
-                    {{-- <h4>THE PAST &amp; THE FUTURE</h4> --}}
                     <p>An essential part of the Work process is implementation. While technology is a main factor, we
                         are also focusing on the people and your enterprise culture to make sure the project is
                         successful.</p>
                 </div>
                 <h3 data-index="4" class="spinx-acco-title"><i class='bx bx-user'></i>Quality check & HANDOVER</h3>
                 <div class="spinx-acco-content" style="display: none;">
-                    {{-- <h4>THE PAST &amp; THE FUTURE</h4> --}}
                     <p>We always try to maintain the best quality for submitting error-free tasks. In this case, we
                         maintain a strict quality check for your Desire services. Then,<br>The final step is here ;
                         After final checking we deliver your project. We always assure the best quality service for you.
@@ -983,14 +657,6 @@ or product.',
 <section class="section_part" style="padding-bottom:10rem;z-index: 26;">
     <div class="container">
         <div class="row faq_section">
-            {{-- <div class="col-sm-12 col-md-12">
-                <h3 class="text-center faq_section_heading">FAQ ! Need Help ?</h3>
-                <p class="text-center">We've got you covered</p>
-            </div> --}}
-            {{-- <div class="col-sm-12 col-md-2 my-5" style="">
-                <div class="w-100">
-                </div>
-            </div> --}}
             <div class="col-sm-12 col-md-12 mb-5" style="border-left: 2px solid #fff;">
                 <div class="row mb-4">
                     @forelse ($faq_service_name as $item)
@@ -1264,122 +930,7 @@ or product.',
     </div>
 </section>
 
-<section class="section_part" style="z-index: 25;">
-    <div class="container-fluid col-sm-12 col-md-12 mb-5" style="background-color: #C1CCDB;padding:4rem 0;">
-        <div class="container py-3">
-            <h3 class="text-uppercase style_text_2">Contact us & Discover your needs</h3>
-        </div>
-    </div>
-</section>
 
-@endsection
-
-
-@section('custom_js')
-<script src="{{asset('final_front_assets/libs/swiper/swiper-bundle.min.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-<script src="{{asset('final_front_assets/js/home-script.js')}}"></script>
-
-
-<script>
-    // $('#single_service_sub_nav a').click(()=>{
-    //     alert($('#single_service_sub_nav a').attr("href"));
-    // });
-
-    // function service_grp_names(data){
-    //     $(`.${data}`).removeClass('d-none');
-    // }
-    // function service_grp_names_out(data){
-    //     // $(`.${data}`).addClass('d-none');
-    // }
-
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-        }
-    });
-
-    function service_grp_names(id) {
-        $.ajax({
-            type: 'POST',
-            url: `/servicelistmenu`,
-            data: {
-                'id': `${id}`
-            },
-            success: function (data) {
-                // console.log(data);
-                $('#service_grp_names_list').html(data.data);
-            }
-        });
-    }
-
-</script>
-
-
-<!-- Home Header || Scroll Animation || Start -->
-{{-- <script>
-    $(window).on("scroll", function () {
-        if ($(window).scrollTop() > 5) {
-            $('.animate_right').removeClass('animate_right_a_none');
-            $('.animate_right').addClass('animate_right_a');
-            $('.animate_left').removeClass('animate_left_a_none');
-            $('.animate_left').addClass('animate_left_a');
-        } else {
-            //remove the background property so it comes transparent again (defined in your css)
-            $('.animate_right').removeClass('animate_right_a');
-            $('.animate_right').addClass('animate_right_a_none');
-            $('.animate_left').removeClass('animate_left_a');
-            $('.animate_left').addClass('animate_left_a_none');
-        }
-    });
-
-</script> --}}
-<!-- Home Header || Scroll Animation || End -->
-
-
-<!-- Sub Menu Function || Start -->
-<script>
-    function submenu() {
-
-        // const sectionName = ['Industry', 'Pricing', 'FAQ', 'New to Outsourcing ?', 'Footer'];
-        const sectionName = [{
-            'id': 'industry',
-            'name': 'Industries We Serve',
-        }, {
-            'id': 'pricing',
-            'name': 'Pricing'
-        }, {
-            'id': 'faq_section',
-            'name': 'FAQ'
-        }, {
-            'id': 'outsourcing',
-            'name': 'New to Outsourcing ?'
-        }, {
-            'id': 'footer',
-            'name': 'Email Us'
-        }];
-
-        let htmlData = "";
-
-        for (let i = 0; i < sectionName.length; i++) {
-            if (i == 1) {
-                htmlData += `<li id="pricing_section" style="cursor:pointer;"><a>${sectionName[i]['name']}</a></li>`;
-            } else {
-                htmlData += `<li><a href="#${sectionName[i]['id']}">${sectionName[i]['name']}</a></li>`;
-            }
-        }
-        $('#section_pagination').html(`<div class="container"><ul>${htmlData}</ul></div>`);
-        // $('.submenu').html(`<div class="container"><ul class="ps-0">${htmlData}</ul></div>`);
-    }
-    submenu();
-
-    $("#pricing_section").click(function () {
-        window.scrollTo(300, 3700);
-    });
-
-</script>
-<!-- Sub Menu Function || End -->
-
-
+@include('frontend.november.footer')
 
 @endsection

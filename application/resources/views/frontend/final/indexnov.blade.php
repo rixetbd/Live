@@ -250,16 +250,20 @@
         top: 0px;
         left: 4px;
     }
-    #search_box_input{
+
+    #search_box_input {
         background: #5a80a0;
         color: #ffffffe8;
     }
+
     #search_box_input::placeholder {
         color: rgba(255, 255, 255, 0.726);
     }
-    #ser_pack_description{
+
+    #ser_pack_description {
         color: #000000a1;
     }
+
 </style>
 
 <style>
@@ -500,9 +504,10 @@
 
 {{-- Service Card || Start --}}
 <style>
-    .service_card_07 >*{
+    .service_card_07>* {
         font-family: 'Poppins', sans-serif;
     }
+
     .service_card_07 {
         background: #fff;
         /* background: #5a80a008; */
@@ -553,6 +558,7 @@
         right: 0.3rem;
         font-size: 2rem;
     }
+
     .discount_info sub {
         font-size: 2rem;
     }
@@ -566,10 +572,11 @@
     .discount_info #got_discount {
         color: #5a80a0;
     }
-    #got_discount{
+
+    #got_discount {
         color: #000;
         font-size: 1.3rem;
-        background:gold;
+        background: gold;
         padding: 0 5px;
     }
 
@@ -909,9 +916,9 @@
     }
 
     .card_default_text {
-    color: #5A80A0;
-    font-size: 1.2rem;
-}
+        color: #5A80A0;
+        font-size: 1.2rem;
+    }
 
 </style>
 {{-- Service Card || End --}}
@@ -943,36 +950,10 @@
                     </ul>
                 </div>
             </div>
-            {{-- <div class="col-12 d-none fixed_top_dropdown" id="fixed_top_dropdown">
-                <div class="row w-100" id="mega_menu_area">
-                    @foreach ($faq_service_name as $service_name)
-                    <div class="col-sm-12 col-md-3 pt-2">
-                        <h3 class="service_group_title_two"><i class="fas fa-bullhorn text-success me-2"></i>
-                            {{$service_name->name}}</h3>
-            @php
-            $service_gigs = \App\Models\Service::where(['category' =>
-            $service_name->id])->where('status','1')->get();
-            @endphp
-
-            @foreach ($service_gigs as $service_gigs_item)
-            <div class="mb-3">
-                <a class="grp_one grp_one{{$service_gigs_item->id}}"
-                    onclick="ServiceNameClick('{{$service_gigs_item->id}}', `grp_one{{$service_gigs_item->id}}`, `{{$service_name->name}}`)">
-                    <span class="service_group_title">{{$service_gigs_item->name}}</span> <span class="title_arrow"><i
-                            class="fas fa-angle-double-right"></i></span>
-                </a>
-            </div>
-            @endforeach
-
         </div>
-        @endforeach
-    </div>
-    </div> --}}
-    </div>
     </div>
 
     <div class="container-fluid" style="border-top:1px solid #ffffff42;background:#3d5f7c;">
-
         <div class="container">
             <div class="col-12 d-none fixed_top_dropdown" id="fixed_top_dropdown">
                 <div class="row w-100 pt-4" id="mega_menu_area">
@@ -1001,7 +982,6 @@
             </div>
         </div>
     </div>
-
 </section>
 
 @endsection
