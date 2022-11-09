@@ -88,7 +88,7 @@
                                     <span title="{{$service->author}}">{{$service->author}}</span>
                                 </td>
                                 <td>
-                                    <span title="{{$service->category}}">{{Str::limit($service->category, 20)}}</span>
+                                    <span title="{{$service->category}}">{{Str::limit($service->getCategory->name, 20)}}</span>
                                 </td>
                                 <td>
                                     @php

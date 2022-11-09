@@ -62,7 +62,7 @@ or product.',
 
 @section('content')
 <!-- Home Header || Start -->
-<section class="hero_area">
+<section class="hero_area" style="background: #5A80A0;">
     <div class="container-fluid p-0" style="position: fixed;">
         <div class="top_div">
             <div class="container">

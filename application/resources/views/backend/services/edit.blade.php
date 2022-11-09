@@ -67,7 +67,7 @@
                             <select name="category" class="form-control">
                                 <option>-- Select a service</option>
                                 @foreach ($all_service_name as $item)
-                                    <option value="{{$item->id}}">{{$item->name}}</option>
+                                    <option value="{{$item->id}}" {{($item->id == $service->getCategory->id?'selected':'')}}>{{$item->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -160,7 +160,7 @@
                 <div class="card p-2">
                     <div style="text-align: right">
                         <button type="submit" name="action" value="save" class="btn btn-default"><i
-                            class="fa fa-archive mr-1"></i> Save</button>
+                            class="fa fa-archive mr-1"></i> Save & Exit</button>
                     <button type="submit" name="action" value="next" class="btn btn-primary"><i
                             class="far fa-save mr-1"></i> Next</button>
                     </div>

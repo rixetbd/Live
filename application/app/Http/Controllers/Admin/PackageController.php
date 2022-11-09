@@ -279,4 +279,9 @@ class PackageController extends Controller
             'success'=>'success',
         ]);
     }
+
+    public function package_update(Request $request)
+    {
+        return $request->all();
+    }
 }

@@ -113,6 +113,7 @@ class ServiceController extends Controller
     {
 
         // return $request->all();
+        // dd();
 
         $request->validate([
             'name'=>'required',
@@ -204,16 +205,26 @@ class ServiceController extends Controller
     public function price_index ($id)
     {
         $package_info = Package::where('service_id', $id)->orderBy('packages_index', 'asc')->get();
-        if(!empty($package_info))
+
+        // return count($package_info);
+        // dd();
+
+        if(count($package_info) != 0)
         {
-            return view('backend.services.price',[
-                'id'=>$id,
-                'package_info'=>$package_info,
-            ]);
-        }else{
+            $feature_list = PackageList::where('package_id', $package_info[0]->id)->get();
+
+            // return $feature_list;
+            // dd();
+
             return view('backend.services.price_edit',[
                 'id'=>$id,
                 'package_info'=>$package_info,
+                'feature_list'=>$feature_list,
+            ]);
+        }else{
+            return view('backend.services.price',[
+                'id'=>$id,
+                'package_info'=>' ',
             ]);
         }
     }
