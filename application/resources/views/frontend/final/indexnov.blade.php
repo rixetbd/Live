@@ -1800,6 +1800,7 @@
             $('#fixed_top_dropdown_btn .icon').addClass('icon_360_out');
         }
     });
+
 </script>
 
 
