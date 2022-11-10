@@ -124,7 +124,7 @@ $('#menu li').click(function () {
 function ServiceNameClick(ID, ClassName) {
     $.ajax({
         type: 'POST',
-        url: `/servicedetails`,
+        url: `{{route('servicedetails')}}`,
         data: {
             'id': `${ID}`
         },

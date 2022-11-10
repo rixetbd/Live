@@ -57,6 +57,9 @@
                         <div class="input-group mb-2">
                             <label for="name" class="w-100">Name</label>
                             <input type="hidden" name="service_id" value="{{$id}}">
+                            <input type="hidden" name="package_info_id[]" value="{{$package_info[0]->id}}">
+                            <input type="hidden" name="package_info_id[]" value="{{$package_info[1]->id}}">
+                            <input type="hidden" name="package_info_id[]" value="{{$package_info[2]->id}}">
                             <input type="text" class="form-control" name="name[]" placeholder="First Package Name ( Ex - Silver )" value="{{$package_info[0]->name}}" required>
                         </div>
                         <div class="input-group my-2">
@@ -154,23 +157,24 @@
 
                             <tr>
                                 <td>0{{$key+1}}</td>
-                                <td><input type="text" class="form-control" name="feature_01_0" value="{{$item->feature_name}}"></td>
+                                <td><input type="text" class="form-control" name="feature_ID[]" value="{{$item->id}}"></td>
+                                <td><input type="text" class="form-control" name="feature_0{{$key+1}}_0" value="{{$item->feature_name}}"></td>
                                 <td>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="c_c_1_1" name="feature_01_1" {{($item->feature_name_1 == "1"?'checked':'')}}>
-                                        <label for="c_c_1_1" class="custom-control-label">First Package</label>
+                                        <input class="custom-control-input" type="checkbox" id="c_c_{{$key+1}}_1" name="feature_0{{$key+1}}_1" {{($item->feature_name_1 == "1"?'checked':'')}}>
+                                        <label for="c_c_{{$key+1}}_1" class="custom-control-label">First Package</label>
                                      </div>
                                 </td>
                                 <td>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="c_c_1_2" name="feature_01_2" {{($item->feature_name_2 == "1"?'checked':'')}}>
-                                        <label for="c_c_1_2" class="custom-control-label">Second Package</label>
+                                        <input class="custom-control-input" type="checkbox" id="c_c_{{$key+1}}_2" name="feature_0{{$key+1}}_2" {{($item->feature_name_2 == "1"?'checked':'')}}>
+                                        <label for="c_c_{{$key+1}}_2" class="custom-control-label">Second Package</label>
                                      </div>
                                 </td>
                                 <td>
                                     <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" type="checkbox" id="c_c_1_3" name="feature_01_3" {{($item->feature_name_3 == "1"?'checked':'')}}>
-                                        <label for="c_c_1_3" class="custom-control-label">Third Package</label>
+                                        <input class="custom-control-input" type="checkbox" id="c_c_{{$key+1}}_3" name="feature_0{{$key+1}}_3" {{($item->feature_name_3 == "1"?'checked':'')}}>
+                                        <label for="c_c_{{$key+1}}_3" class="custom-control-label">Third Package</label>
                                      </div>
                                 </td>
                             </tr>

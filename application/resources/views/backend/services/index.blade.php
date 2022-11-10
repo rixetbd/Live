@@ -39,7 +39,7 @@
 <section class="content">
 
     <div class="row">
-        <div class="col-md-3">
+        {{-- <div class="col-md-3">
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Total Summary</h3>
@@ -51,8 +51,8 @@
                 </div>
                 <!-- /.card-body -->
             </div>
-        </div>
-        <div class="col-md-9">
+        </div> --}}
+        <div class="col-md-12">
             <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">All Service List</h3>
@@ -88,7 +88,11 @@
                                     <span title="{{$service->author}}">{{$service->author}}</span>
                                 </td>
                                 <td>
-                                    <span title="{{$service->category}}">{{Str::limit($service->getCategory->name, 20)}}</span>
+                                    @if (\App\Models\ServiceName::where('id', $service->category)->exists())
+                                        <span title="{{$service->category}}">{{Str::limit($service->getCategory->name, 30)}}</span>
+                                    @else
+                                        <span title="{{$service->category}}">N/A</span>
+                                    @endif
                                 </td>
                                 <td>
                                     @php

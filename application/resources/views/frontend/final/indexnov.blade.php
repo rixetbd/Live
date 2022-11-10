@@ -1809,7 +1809,7 @@
     function ServiceNameClick(ID, ClassName, base_service) {
         $.ajax({
             type: 'POST',
-            url: `/servicedetails`,
+            url: `{{route('servicedetails')}}`,
             data: {
                 'id': `${ID}`
             },

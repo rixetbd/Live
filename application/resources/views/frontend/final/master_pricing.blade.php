@@ -104,7 +104,7 @@
 
 
                     <!-- Regular Card || Start -->
-                    {{-- <div class="service_card_07">
+                    <div class="service_card_07">
                         <div class="service_card_07_div">
                             <div class="row pb-4" id="card_badge">
                                 <div class="col" onclick="inputCheck()">Basic</div>
@@ -168,11 +168,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                     <!-- Regular Card || End -->
 
                     <!-- Lead Generation Card || Start -->
-                    <div class="service_card_07">
+                    {{-- <div class="service_card_07">
                         <div class="service_card_07_div">
                             <div class="row pb-4 pt-2">
                                 <div class="col" onclick="inputCheck()">Basic</div>
@@ -351,7 +351,7 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- Lead Generation Card || End -->
 
 

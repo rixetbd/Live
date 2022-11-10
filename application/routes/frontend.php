@@ -50,7 +50,7 @@ Route::middleware('auth')->group(function(){
         Route::post('/getservicedata', 'getservicedata')->name('frontend.getservicedata');
         Route::post('/getservicedata/first', 'getservicedata_first')->name('frontend.getservicedata_first');
         Route::post('/getservicedata/selected', 'getservicedata_selected')->name('frontend.getservicedata_selected');
-        Route::post('/servicedetails', 'servicedetails');
+        Route::post('/servicedetails', 'servicedetails')->name('servicedetails');
         Route::post('/servicedetailsauto', 'servicedetailsauto');
         Route::get('/terms-and-conditions', 'terms_and_conditions');
         Route::post('/servicelistmenu', 'servicelistmenu');

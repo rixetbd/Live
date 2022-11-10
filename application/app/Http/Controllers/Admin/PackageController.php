@@ -27,8 +27,8 @@ class PackageController extends Controller
     public function store(Request $request)
     {
 
-        // return $request->all();
-        // dd();
+        return $request->all();
+        dd();
 
         $all_packageID = [];
         foreach ($request->name as $key => $value) {
@@ -282,6 +282,47 @@ class PackageController extends Controller
 
     public function package_update(Request $request)
     {
+
+        foreach ($request->package_info_id as $key => $value) {
+            Package::where('id','=', $value)->update([
+                'name'=>$request->name[$key],
+                'title'=>$request->title[$key],
+                'price'=>$request->price[$key],
+                'duration'=>$request->duration[$key],
+                'description'=>$request->info[$key]
+            ]);
+        }
+
+        foreach ($request->feature_ID as $key => $value) {
+
+                $serial_number = $key+1;
+
+                $feature_name_gen = 'feature_0'.$serial_number.'_0';
+                $feature_name_0 = $request->$feature_name_gen;
+
+                $feature_name_1_name = 'feature_0'.$serial_number.'_1';
+                $feature_name_1 = $request->$feature_name_1_name;
+
+                $feature_name_2_name = 'feature_0'.$serial_number.'_2';
+                $feature_name_2 = $request->$feature_name_2_name;
+
+                $feature_name_3_name = 'feature_0'.$serial_number.'_3';
+                $feature_name_3 = $request->$feature_name_3_name;
+
+            PackageList::where('id','=',$value)->update([
+                'feature_name'=>($feature_name_0 != ''?$feature_name_0:'0'),
+                'feature_name_1'=>($feature_name_1 == 'on'?'1':'0'),
+                'feature_name_2'=>($feature_name_2 == 'on'?'1':'0'),
+                'feature_name_3'=>($feature_name_3 == 'on'?'1':'0'),
+            ]);
+
+        }
+
+        PackageList::where('feature_name','=','0')->delete();
+
         return $request->all();
+
+        return redirect()->route('admin.service.index');
+
     }
 }

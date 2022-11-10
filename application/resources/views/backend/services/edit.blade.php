@@ -66,8 +66,15 @@
                             {{-- <input type="text" class="form-control" name="category" placeholder="Category" value="{{($service->category != "" ? $service->category : "")}}"> --}}
                             <select name="category" class="form-control">
                                 <option>-- Select a service</option>
+
                                 @foreach ($all_service_name as $item)
-                                    <option value="{{$item->id}}" {{($item->id == $service->getCategory->id?'selected':'')}}>{{$item->name}}</option>
+
+                                    @if (\App\Models\ServiceName::where('id', $service->category)->exists())
+                                        <option value="{{$item->id}}" {{($item->id == $service->getCategory->id?'selected':'')}}>{{$item->name}}</option>
+                                    @else
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                    @endif
+
                                 @endforeach
                             </select>
                         </div>
