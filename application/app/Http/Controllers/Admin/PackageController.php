@@ -173,72 +173,6 @@ class PackageController extends Controller
         ]);
 
 
-
-        // if (!empty($request->active_list_1)) {
-        //     for ($i=0; $i < count($request->active_list_1); $i++) {
-        //         PackageList::insert([
-        //             'package_id'=>$all_packageID[0],
-        //             'info'=>$request->active_list_1[$i],
-        //             'status'=>1,
-        //             'created_at'=>Carbon::now(),
-        //         ]);
-        //     }
-        // }
-        // if (!empty($request->deactive_list_1)) {
-        //     for ($i=0; $i < count($request->deactive_list_1); $i++) {
-        //         PackageList::insert([
-        //             'package_id'=>$all_packageID[0],
-        //             'info'=>$request->deactive_list_1[$i],
-        //             'status'=>0,
-        //             'created_at'=>Carbon::now(),
-        //         ]);
-        //     }
-        // }
-
-        // if (!empty($request->active_list_2)) {
-        //     for ($i=0; $i < count($request->active_list_2); $i++) {
-        //         PackageList::insert([
-        //             'package_id'=>$all_packageID[1],
-        //             'info'=>$request->active_list_2[$i],
-        //             'status'=>1,
-        //             'created_at'=>Carbon::now(),
-        //         ]);
-        //     }
-        // }
-
-        // if (!empty($request->deactive_list_2)) {
-        //     for ($i=0; $i < count($request->deactive_list_2); $i++) {
-        //         PackageList::insert([
-        //             'package_id'=>$all_packageID[1],
-        //             'info'=>($request->deactive_list_2[$i] == ""?" ":$request->deactive_list_2[$i]),
-        //             'status'=>0,
-        //             'created_at'=>Carbon::now(),
-        //         ]);
-        //     }
-        // }
-        // if (!empty($request->active_list_3)) {
-        //     for ($i=0; $i < count($request->active_list_3); $i++) {
-        //         PackageList::insert([
-        //             'package_id'=>$all_packageID[2],
-        //             'info'=>$request->active_list_3[$i],
-        //             'status'=>1,
-        //             'created_at'=>Carbon::now(),
-        //         ]);
-        //     }
-        // }
-
-        // if (!empty($request->deactive_list_3)) {
-        //     for ($i=0; $i < count($request->deactive_list_3); $i++) {
-        //         PackageList::insert([
-        //             'package_id'=>$all_packageID[2],
-        //             'info'=>($request->deactive_list_3[$i] == ""?" ":$request->deactive_list_3[$i]),
-        //             'status'=>0,
-        //             'created_at'=>Carbon::now(),
-        //         ]);
-        //     }
-        // }
-
-
         return redirect()->route('admin.service.index');
     }
 
@@ -296,7 +230,6 @@ class PackageController extends Controller
         foreach ($request->feature_ID as $key => $value) {
 
                 $serial_number = $key+1;
-
                 $feature_name_gen = 'feature_0'.$serial_number.'_0';
                 $feature_name_0 = $request->$feature_name_gen;
 
@@ -319,8 +252,6 @@ class PackageController extends Controller
         }
 
         PackageList::where('feature_name','=','0')->delete();
-
-        return $request->all();
 
         return redirect()->route('admin.service.index');
 
