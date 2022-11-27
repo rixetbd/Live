@@ -215,7 +215,6 @@ or product.',
                         <div class="home_service_box">
                             <div class="img_box">
                                 <img src="{{asset('final_front_assets/img/icons/set_2/Untitled-2-01.png')}}" alt="">
-                                {{-- <h4>Software Industry</h4> --}}
                             </div>
                             <div class="content_box">
                                 <h4>Software Industry</h4>
