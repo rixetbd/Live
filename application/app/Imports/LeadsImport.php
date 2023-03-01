@@ -2,7 +2,7 @@
 
 namespace App\Imports;
 
-use Illuminate\Support\Carbon;
+use Carbon\Carbon;
 use App\Models\Lead;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithStartRow;

@@ -63,7 +63,6 @@ class CsvUploadController extends Controller
     function CityCsvUpload(Request $request)
     {
         Excel::import(new CitiesImport, $request->CityCsvUpload);
-
         return back();
     }
 
